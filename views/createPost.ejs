@@ -13,7 +13,7 @@
             <h1>Create Post</h1>
         </div>
         <%if(Object.keys(params).length > 0) {%>
-            <form action="/app/update_post/<%= params.title%>" method="post">
+            <form action="/update_post/<%= params.title%>" method="post">
                 <input type="text" name="title" placeholder="<%=params.title%>"></input>
                 <textarea name="desc" cols="30" rows="15" placeholder="<%=params.body%>"></textarea>
                 <div class="btn">
@@ -21,7 +21,7 @@
                 </div>
             </form>
         <%} else {%>
-            <form action="/app/create_post" method="post">
+            <form action="/create_post" method="post">
                 <input type="text" placeholder="title" name="title" value="">
                 </input>
                 <textarea name="desc" cols="30" rows="15" placeholder="Content"></textarea>

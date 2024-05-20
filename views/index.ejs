@@ -21,8 +21,8 @@
                 <% if(blogs) { %>
                     <% blogs.forEach(blog=>{ %>
                         <li>
-                            <a href="/app/show_post?title=<%=blog.title%>&body=<%=blog.body%>" class="title"><%= blog.title %></a>
-                            <a href="/app/show_post?title=<%=blog.title%>&body=<%=blog.body%>" class="open-blog">Explore blog >></a>
+                            <a href="/show_post?title=<%=blog.title%>&body=<%=blog.body%>" class="title"><%= blog.title %></a>
+                            <a href="/show_post?title=<%=blog.title%>&body=<%=blog.body%>" class="open-blog">Explore blog >></a>
                         </li>
 
                     <% }) %>

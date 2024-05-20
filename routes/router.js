@@ -19,7 +19,7 @@ router.post('/create_post', async(req, res) => {
             body: data.desc
         });
         await blog.save();
-        res.redirect('/app');
+        res.redirect('/');
         
     } catch (error) {
         console.log(error);
@@ -32,7 +32,7 @@ router.post('/update_post/:title', async(req, res) => {
             title: req.body.title,
             body: req.body.desc
         }});
-        res.redirect('/app');
+        res.redirect('/');
 
     } catch (error) {
         console.log("Got error while uupdsating blog: " + error);
