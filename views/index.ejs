@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogify</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <%- include('./partials/header.ejs') %>
+
+        <div class="author">
+            <h1>HOLA Amigos!</h1>
+            <p>Blog app made with NodeJS and MongoDB</p>
+        </div>
+        <img src="/img/nature.png" alt="" class="nature">
+        <section class="articles">
+            <h2>Latest Posts</h2>
+            <ul class="posts">
+                <% if(blogs) { %>
+                    <% blogs.forEach(blog=>{ %>
+                        <li>
+                            <a href="/app/show_post?title=<%=blog.title%>&body=<%=blog.body%>" class="title"><%= blog.title %></a>
+                            <a href="/app/show_post?title=<%=blog.title%>&body=<%=blog.body%>" class="open-blog">Explore blog >></a>
+                        </li>
+
+                    <% }) %>
+                <% } %>
+            </ul>
+        </section>
+        <%- include('./partials/footer.ejs') %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyApp</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <%- include('./partials/header.ejs') %>
+
+        <div class="post">
+            <%if(query) {%>
+                <h1><%= query.title %></h1>
+                <p><%= query.body %></p>
+            <%}%>
+            <div class="update-container">
+                <a class="update" href="/app/update_post/<%=query.title%>/<%=query.body%>">Update</a>
+            </div>
+        </div>
+        
+        <%- include('./partials/footer.ejs') %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyApp</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <%- include('./partials/header.ejs') %>
+        <div class="author">
+            <h1>Create Post</h1>
+        </div>
+        <%if(Object.keys(params).length > 0) {%>
+            <form action="/app/update_post/<%= params.title%>" method="post">
+                <input type="text" name="title" placeholder="<%=params.title%>"></input>
+                <textarea name="desc" cols="30" rows="15" placeholder="<%=params.body%>"></textarea>
+                <div class="btn">
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        <%} else {%>
+            <form action="/app/create_post" method="post">
+                <input type="text" placeholder="title" name="title" value="">
+                </input>
+                <textarea name="desc" cols="30" rows="15" placeholder="Content"></textarea>
+                <div class="btn">
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        <%}%>
+        <%- include('./partials/footer.ejs') %>
+    </div>
+</body>
+</html>
