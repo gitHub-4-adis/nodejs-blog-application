@@ -15,3 +15,5 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 app.listen(PORT, ()=>{
     connectMongo();
 });
+
+module.exports = app;
