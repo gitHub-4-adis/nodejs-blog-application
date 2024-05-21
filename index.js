@@ -16,5 +16,3 @@ app.set('view engine', 'ejs');
 app.listen(PORT, ()=>{
     connectMongo();
 });
-
-module.exports = app;
