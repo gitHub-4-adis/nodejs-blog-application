@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const router = require('./routes/router.js');
-const connectMongo = require('./db/conn.js');
+const router = require('../routes/router.js');
+const connectMongo = require('../db/conn.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
